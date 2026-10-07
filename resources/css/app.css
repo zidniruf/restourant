@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* AUTO SLIDER */
+
+@keyframes scrollSlider {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+.animate-scroll {
+
+    width: max-content;
+
+    animation: scrollSlider 30s linear infinite;
+
+}
+
+.animate-scroll:hover {
+
+    animation-play-state: paused;
+
+}
+
+/* FLOAT HERO IMAGE */
+
+@keyframes floatImage {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+.animate-float {
+
+    animation: floatImage 4s ease-in-out infinite;
+
+}
+
+/* Animasi mengalir ke samping */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Menggeser tepat sejauh 50% dari lebar total track (karena ada 2 looping data) */
+        transform: translateX(-50%);
+    }
+}
+
+.testimonial-track {
+    /* Waktu 30s bisa diperbesar/diperkecil untuk mengatur kecepatan scroll */
+    animation: scroll-left 30s linear infinite;
+}
+
+/* Opsional: Berhenti saat mouse diarahkan ke kartu */
+.testimonial-track:hover {
+    animation-play-state: paused;
+}
+
+.highlight-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-wrapper::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to right, #FAF6F0 60%, transparent);
+    z-index: 20;
+    pointer-events: none;
+}
+
+.highlight-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px; /* geser ke kanan */
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to left, #FAF6F0 60%, transparent);
+    z-index: 20;
+    pointer-events: none;
+}
+
+    .highlight-track {
+        /* Lebar mengikuti isi, tidak terputus */
+        width: max-content; 
+        will-change: transform;
+        cursor: grab;
+        /* Hapus animasi CSS bawaan karena JS yang akan mengaturnya */
+    }
+
+    .highlight-track:active {
+        cursor: grabbing;
+    }
+
+    /* Mencegah gambar di dalam slider mengganggu proses drag/swipe */
+    .highlight-track img {
+        pointer-events: none;
+    }
+
+    [x-cloak] { display: none !important; }
+
+.highlight-track{
+    width:max-content;
+    padding-inline:20px;
+}

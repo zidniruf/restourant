@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://restotamanjoglo.my.id/sitemap.xml

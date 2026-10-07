@@ -1,0 +1,11 @@
+/* Perbaikan overflow teks RichEditor Filament */
+.fi-fo-rich-editor .ProseMirror {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: pre-wrap !important;
+}
+
+.fi-fo-rich-editor .ProseMirror p {
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+}
